@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab4</title>
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <fieldset style="width: 650px; margin: auto;">
+        <legend>Hieu ung fade</legend>
+        <div style="margin-bottom: 5px;">
+            <input type="button" id="fade1" value="FadeOut default">
+            <input type="button" id="fade2" value="FadeOut with duration">
+            <input type="button" id="fade3" value="FadeOut with callback">
+            <input type="button" id="fade4" value="FadeOut with duration + callback">
+            <input type="button" id="fadein" value="FadeIn default">
+        </div>
+        <div style="text-align: center;"><img id="img-show" src="images/1.jpg" alt=""></div>
+    </fieldset>
+    <script>
+        // bat su kien cua id = fade1
+        $("#fade1").click(function(){
+            // tac dong vao id = img-show, su dung ham fadeOut
+            $("#img-show").fadeOut();
+        });
+        // bat su kien click cua id = fade2, su dung ham fadeOut(duration)
+        $("#fade2").click(function(){
+            // tac dong vao id = img-show, su dung ham fadeOut
+            $("#img-show").fadeOut(3000 );
+        });
+        // bat su kien click cua id = fade3, su dung ham fadeOut(goi 1 ham thuc hien o day)
+        $("#fade3").click(function(){
+            $("#img-show").fadeOut(function(){
+                alert("HIiiii");
+            });
+        });
+        // bat su kien click cua id = fade4, su dung ham fadeOut (duration, callback)
+        $("#fade4").click(function(){
+            $("#img-show").fadeOut(2000,function(){
+                alert("say hi");
+            });
+        });
+            // tac dong vao id = img-show, su dung ham fadeOut
+        // bat su kien click cua id = fadein
+        $("#fadein").click(function(){
+            $("#img-show").fadeIn();
+        })
+    </script>
+</body>
+</html>

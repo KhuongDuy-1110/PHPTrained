@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab9</title>
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <div class="box"><img id="img-show" src="images/1.jpg"></div>
+    <style>
+        .box{
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+            margin: auto;
+        }
+    </style>
+    <script>
+        var slide = new Array();
+        slide[0]="images/1.jpg";
+        slide[1]="images/2.jpg";
+        slide[2]="images/3.jpg";
+        slide[3]="images/4.jpg";
+        slide[4]="images/5.jpg";
+        var n = 0;
+        setInterval(function(){
+            $("#img-show").fadeOut(function(){
+                n++;
+                if(n==slide.length)
+                n=0;
+                $("#img-show").attr("src",slide[n]);
+                $("#img-show").fadeIn();
+            });
+        },2000);
+    </script>
+</body>
+</html>

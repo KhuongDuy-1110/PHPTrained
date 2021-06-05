@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab6</title>
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <fieldset style="width: 300px;">
+        <legend>Hieu ung, slide up, slide shown</legend>
+        <div style="margin-bottom: 5px;">
+            <input type="button" id="btn1" value="slideUp">
+            <input type="button" id="btn2" value="slideDown">
+            <input type="button" id="btn3" value="slideToggle">
+        </div>
+        <img src="images/1.jpg" id="img-show">
+    </fieldset>
+    <style>
+        img{
+            width: 500px;
+        }
+        fieldset{
+                margin: auto;
+            }
+    </style>
+    <script>
+        // bat su kien click cua id = btn1
+        $("#btn1").click(function(){
+            // tac dong vao id = img-show, goi ham slideUp
+            $("#img-show").slideUp();
+        });
+        $("#btn2").click(function(){
+            // tac dong vao id = img-show, goi ham slideUp
+            $("#img-show").slideDown();
+        });
+        $("#btn3").click(function(){
+            // tac dong vao id = img-show, goi ham slideUp
+            $("#img-show").slideToggle();
+        });
+    </script>
+</body>
+</html>

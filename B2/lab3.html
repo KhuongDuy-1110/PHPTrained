@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab3</title>
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <fieldset style="width: 300px; margin: auto;">
+        <legend>Cong 2 so</legend>
+        <table cellpadding="5">
+            <tr>
+                <td>So 1</td>
+                <td><input type="number" id="so1"></td>
+            </tr>
+            <tr>
+                <td>So 2</td>
+                <td><input type="number" id="so2"></td>
+            </tr>
+            <tr>
+                <td>Ket qua </td>
+                <td><input type="text" disabled id="ketqua"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" id="btn" value="Thuc hien"></td>
+            </tr>
+        </table>
+    </fieldset>
+    <script>
+        $(document).ready(function(){
+            // bat su kien click cua id = btn
+            $("#btn").click(function(){
+                // lay gia tri cua id = so1
+                var so1 = $("#so1").val();
+                var so2 = $("#so2").val();
+                var tong = parseInt(so1) + parseInt(so2);
+                //xuat ket qua 
+                $("#ketqua").val(so1 + " + " + so2 + " = " + tong);
+            });
+        });
+    </script>
+</body>
+</html>

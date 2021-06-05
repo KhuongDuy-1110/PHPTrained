@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab2</title>
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <fieldset style="width: 300px; margin: auto;">
+        <legend>Jquery</legend>
+        <input type="text" id="txt">
+        <input type="button" id="btn" value="Click">
+        <h1 class="show"></h1>
+    </fieldset>
+    <script>
+        $(document).ready(function() {
+            // bat su kien click cua id = btn
+            $("#btn").click(function() {
+                // lay gia tri cua id = txt
+                var str = $("#txt").val();
+                // xuat gia tri ra class = show
+                $(".show").html(str);
+            })
+        })
+    </script>
+</body>
+
+</html>

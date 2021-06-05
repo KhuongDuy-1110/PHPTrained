@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab5</title>
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <div class="box">
+        <img id="img-show" src="images/1.jpg">
+        <div class="next">Next</div>
+        <div class="prev">Prev</div>
+    </div>
+    <style>
+        .box{
+            width: 500px;
+            height: 300px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .next, .prev{
+            width: 100px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            top: 130px;
+            cursor: pointer;
+        }
+        .next{
+            right: 0px;
+        }
+    </style>
+    <script>
+        // tao bien n de luu vi tri cua a 
+        var n=0;
+        // tao array chua danh sach anh
+        var slide = new Array();
+        slide[0] = "images/1.jpg";
+        slide[1] = "images/2.jpg";
+        slide[2] = "images/3.jpg";
+        slide[3] = "images/4.jpg";
+        slide[4] = "images/5.jpg";
+        //  bat su kien cua class = next
+        $(".next").click(function(){
+            // tac dong vao id = img-show, thuc hien hieu ung fadeout
+            $("#img-show").fadeOut(function(){
+                n++;
+                // reset n khi n o vi tri cuoi cung
+                if(n==slide.length)
+                    n=0;
+                // thay doi gia tri cua thuoc tinh src cua id = img-show
+                $("#img-show").attr("src",slide[n]);
+                // thuc hien hieu ung fadeIn de hien thi lai the html
+                $("#img-show").fadeIn();
+            });
+        });
+        $(".prev").click(function(){
+            // tac dong vao id = img-show, thuc hien hieu ung fadeout
+            $("#img-show").fadeOut(function(){
+                n--;
+                // reset n khi n o vi tri cuoi cung
+                if(n==-1)
+                    n=slide.length-1;
+                // thay doi gia tri cua thuoc tinh src cua id = img-show
+                $("#img-show").attr("src",slide[n]);
+                // thuc hien hieu ung fadeIn de hien thi lai the html
+                $("#img-show").fadeIn();
+            });
+        });
+    </script>
+</body>
+</html>

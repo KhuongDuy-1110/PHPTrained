@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab7</title>
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li class="parent parent1">Category 1</li>
+            <li class="slide1">
+                <ul>
+                    <li>Category 1 sub 1</li>
+                    <li>Category 1 sub 2</li>
+                    <li>Category 1 sub 3</li>
+                    <li>Category 1 sub 4</li>
+                    <li>Category 1 sub 5</li>
+                </ul>
+            </li>
+            <li class="parent parent2">Category 2</li>
+            <li class="slide2">
+                <ul>
+                    <li>Category 2 sub 1</li>
+                    <li>Category 2 sub 2</li>
+                    <li>Category 2 sub 3</li>
+                    <li>Category 2 sub 4</li>
+                    <li>Category 2 sub 5</li>
+                </ul>
+            </li>
+            <li class="parent parent3">Category 3</li>
+            <li class="slide3">
+                <ul>
+                    <li>Category 3 sub 1</li>
+                    <li>Category 3 sub 2</li>
+                    <li>Category 3 sub 3</li>
+                    <li>Category 3 sub 4</li>
+                    <li>Category 3 sub 5</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <style>
+        .box {
+            border: 1px solid #dddddd;
+            width: 300px;
+            margin: auto;
+        }
+        
+        .box ul {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        
+        .parent {
+            background: purple;
+            color: white;
+            line-height: 30px;
+            padding-left: 15px;
+            cursor: pointer;
+            border-bottom: 1px solid white;
+        }
+        
+        .box>ul>li>ul {
+            padding-left: 20px;
+        }
+        
+        .slide1,
+        .slide2,
+        .slide3 {
+            display: none;
+        }
+        
+        .box>ul>li>ul>li {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        // bat hieu ung click cua class = parent1
+        $(".parent1").click(function() {
+
+            $(".slide2").slideUp();
+            $(".slide3").slideUp();
+            $(".slide1").slideToggle();
+        });
+        $(".parent2").click(function() {
+            $(".slide1").slideUp();
+            $(".slide3").slideUp();
+            $(".slide2").slideToggle();
+        });
+        $(".parent3").click(function() {
+            $(".slide1").slideUp();
+            $(".slide2").slideUp();
+            $(".slide3").slideToggle();
+        });
+    </script>
+</body>
+
+</html>
